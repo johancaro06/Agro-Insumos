@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel Admin - Agroinsumos</title>
+    <link rel="stylesheet" href="/css/admin.css">
+</head>
+<body>
+
+<header class="navbar">
+    <div class="logo">🌱 <span>Agroinsumos</span> Admin</div>
+    <div class="nav-links">
+        <a href="/index.html">Ver Catálogo</a>
+        <a href="#" id="btnLogout">Cerrar Sesión</a>
+    </div>
+</header>
+
+<div class="container">
+    <section class="glass-header">
+        <h1>Gestión de Inventario</h1>
+        <p>Añade, edita o elimina productos del catálogo de forma eficiente.</p>
+    </section>
+
+    <div class="form-card">
+        <form id="formProducto">
+            <input type="hidden" id="id">
+            <h2 class="form-title">Datos del Producto</h2>
+            <div class="form-grid">
+                <div class="input-group">
+                    <label>Nombre del Producto</label>
+                    <input type="text" id="nombre" placeholder="Ej: Fertilizante Urea" required>
+                </div>
+                <div class="input-group">
+                    <label>Precio (COP)</label>
+                    <input type="number" id="precio" placeholder="0.00" required>
+                </div>
+                <div class="input-group">
+                    <label>Stock Disponible</label>
+                    <input type="number" id="stock" placeholder="Cantidad" required>
+                </div>
+                <div class="input-group">
+                    <label>Categoría</label>
+                    <select id="categoria" required>
+                        <option value="">Seleccione categoría</option>
+                        <option value="1">Fertilizantes</option>
+                        <option value="2">Insecticidas</option>
+                        <option value="3">Pesticidas</option>
+                        <option value="4">Herbicidas</option>
+                    </select>
+                </div>
+                <div class="input-group full">
+                    <label>Descripción</label>
+                    <textarea id="descripcion" placeholder="Escribe las especificaciones..." required></textarea>
+                </div>
+                <div class="input-group full">
+                    <label>Imagen del Producto</label>
+                    <input type="file" id="imagen" accept="image/*">
+                    <div class="preview-container">
+                        <img id="preview" class="preview-img" src="" style="display:none;">
+                    </div>
+                </div>
+            </div>
+            <button type="submit" class="btn-save" id="btnSubmit">✨ Guardar Producto</button>
+        </form>
+    </div>
+
+    <h2 class="section-subtitle">Productos en Existencia</h2>
+    <section id="tablaProductos" class="product-grid"></section>
+</div>
+
+<div id="notification-area"></div>
+
+<div id="customModal" class="modal-overlay">
+    <div class="modal-content">
+        <div class="modal-icon">⚠️</div>
+        <h2>¿Estás seguro?</h2>
+        <p>Esta acción eliminará el producto permanentemente de la base de datos.</p>
+        <div class="modal-buttons">
+            <button id="btnCancel" class="btn-secondary">Cancelar</button>
+            <button id="btnConfirm" class="btn-danger">Eliminar ahora</button>
+        </div>
+    </div>
+</div>
+
+<script src="/js/admin.js"></script>
+</body>
+</html>

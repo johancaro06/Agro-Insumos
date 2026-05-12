@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agroinsumos - Iniciar Sesión</title>
+    <link rel="stylesheet" href="/css/login.css">
+</head>
+<body>
+
+<div class="login-container">
+    <div class="hero-panel">
+        <div class="overlay"></div>
+        <div class="hero-content">
+            <div class="logo">🍃 Agroinsumos</div>
+            <div class="welcome-text">
+                <h1>Tu campo,<br>tu futuro.</h1>
+                <p>La plataforma ideal para la gestión de suministros en el agro colombiano.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-panel">
+        <div class="login-card">
+            <h2>¡Hola de nuevo!</h2>
+            <p class="subtitle">Por favor, ingresa tus datos para continuar.</p>
+
+            <form id="formLogin">
+                <div class="input-group">
+                    <label for="usuario">Usuario o Correo</label>
+                    <div class="input-wrapper">
+                        <span>👤</span>
+                        <input type="text" id="usuario" placeholder="Ej: jcaro2026" required>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label for="contrasena">Contraseña</label>
+                    <div class="input-wrapper">
+                        <span>🔒</span>
+                        <input type="password" id="contrasena" placeholder="••••••••" required>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-login">Ingresar al Sistema</button>
+            </form>
+
+            <div id="mensaje"></div>
+
+            <div class="footer-card">
+                ¿Aún no tienes cuenta? <a href="/registro.html">Crea una aquí</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="/js/login.js"></script>
+</body>
+</html>

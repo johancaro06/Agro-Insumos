@@ -1,0 +1,75 @@
+:root {
+    --verde: #00a651;
+    --verde-hover: #008f45;
+    --azul: #0b132b;
+    --rojo: #ef4444;
+    --white: rgba(255, 255, 255, 0.95);
+    --shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+
+body {
+    background-color: #f0f4f8;
+    background-image: linear-gradient(rgba(240, 244, 248, 0.8), rgba(240, 244, 248, 0.8)),
+                      url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1920&q=80');
+    background-size: cover; background-attachment: fixed;
+}
+
+/* NAVBAR */
+.navbar { background: var(--azul); color: white; padding: 15px 8%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; }
+.logo span { color: var(--verde); font-weight: 800; }
+.nav-links { display: flex; align-items: center; }
+.nav-links a { color: white; text-decoration: none; margin-left: 20px; font-weight: 600; }
+
+.btn-logout {
+    border: 1.5px solid var(--rojo);
+    padding: 6px 15px;
+    border-radius: 8px;
+    color: var(--rojo) !important;
+    transition: 0.3s;
+}
+.btn-logout:hover { background: var(--rojo); color: white !important; }
+
+.container { width: 90%; max-width: 1200px; margin: 40px auto; }
+
+/* GLASSMORPHISM FORM */
+.form-card { background: var(--white); backdrop-filter: blur(10px); padding: 30px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.5); box-shadow: var(--shadow); margin-bottom: 40px; }
+.form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.full { grid-column: span 2; }
+
+label { display: block; margin-bottom: 8px; font-weight: 600; color: var(--azul); }
+input, select, textarea { padding: 12px; border-radius: 10px; border: 1.5px solid #cbd5e1; width: 100%; outline: none; }
+
+.btn-save { width: 100%; margin-top: 20px; padding: 15px; background: var(--verde); color: white; border: none; border-radius: 12px; font-weight: bold; cursor: pointer; transition: 0.3s; }
+.btn-save:hover { background: var(--verde-hover); transform: translateY(-2px); }
+
+/* PREVIEW */
+.preview-container { margin-top: 15px; display: flex; justify-content: center; background: #f1f5f9; border-radius: 12px; min-height: 150px; border: 2px dashed #cbd5e1; padding: 10px; }
+.preview-img { max-width: 100%; max-height: 200px; object-fit: contain; }
+
+/* NOTIFICACIONES */
+#notification-area { position: fixed; top: 20px; right: 20px; z-index: 10000; display: flex; flex-direction: column; gap: 10px; }
+.toast {
+    background: white; padding: 15px 25px; border-radius: 12px; min-width: 280px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15); border-left: 6px solid var(--verde);
+    display: flex; align-items: center; transform: translateX(120%); transition: 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+.toast.show { transform: translateX(0); }
+.toast.error { border-left-color: var(--rojo); }
+
+/* MODAL */
+.modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(11, 19, 43, 0.8); backdrop-filter: blur(5px); display: none; justify-content: center; align-items: center; z-index: 11000; }
+.modal-content { background: white; padding: 30px; border-radius: 20px; width: 90%; max-width: 400px; text-align: center; }
+.modal-buttons { display: flex; gap: 10px; margin-top: 20px; }
+.btn-secondary { flex: 1; padding: 12px; border-radius: 10px; border: 1px solid #cbd5e1; cursor: pointer; }
+.btn-danger { flex: 1; padding: 12px; border-radius: 10px; background: var(--rojo); color: white; border: none; cursor: pointer; font-weight: bold; }
+
+/* CARDS */
+.product-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 25px; }
+.product-card { background: var(--white); border-radius: 20px; padding: 20px; box-shadow: var(--shadow); border: 1px solid rgba(255,255,255,0.5); }
+.image-container img { width: 100%; height: 150px; object-fit: contain; }
+.price { color: var(--verde); font-size: 1.4rem; font-weight: 800; margin: 10px 0; }
+.card-buttons { display: flex; gap: 10px; }
+.btn-edit { background: var(--verde); color: white; border: none; flex: 1; padding: 10px; border-radius: 8px; cursor: pointer; }
+.btn-delete { background: #fee2e2; color: var(--rojo); border: none; flex: 1; padding: 10px; border-radius: 8px; cursor: pointer; }

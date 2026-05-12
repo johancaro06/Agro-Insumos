@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Cliente - Agroinsumos</title>
+    <link rel="stylesheet" href="/css/registro.css">
+</head>
+<body>
+
+<div class="form-container">
+    <header class="form-header">
+        <div class="logo-registro">🍃 Agroinsumos</div>
+        <h1>Crea tu cuenta</h1>
+        <p>Únete a la red de insumos agrícolas</p>
+    </header>
+
+    <form id="formRegistro">
+        <h2 class="section-title">Información Personal</h2>
+        <div class="form-row">
+            <div class="form-group">
+                <label>Nombres *</label>
+                <div class="input-icon">
+                    <span class="icon">👤</span>
+                    <input type="text" id="nombres" required placeholder="Ej: Johan">
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Apellidos *</label>
+                <div class="input-icon">
+                    <span class="icon">👤</span>
+                    <input type="text" id="apellidos" required placeholder="Ej: Caro">
+                </div>
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group">
+                <label>Correo *</label>
+                <div class="input-icon">
+                    <span class="icon">✉️</span>
+                    <input type="email" id="correo" required placeholder="correo@ejemplo.com">
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Teléfono *</label>
+                <div class="input-icon">
+                    <span class="icon">📞</span>
+                    <input type="text" id="telefono" required placeholder="3101234567">
+                </div>
+            </div>
+        </div>
+
+        <div class="form-row single">
+            <div class="form-group">
+                <label>DNI / Cédula *</label>
+                <div class="input-icon">
+                    <span class="icon">💳</span>
+                    <input type="text" id="dni" required placeholder="Número de documento">
+                </div>
+            </div>
+        </div>
+
+        <h2 class="section-title">Información de Cuenta</h2>
+        <div class="form-row">
+            <div class="form-group">
+                <label>Usuario *</label>
+                <div class="input-icon">
+                    <span class="icon">🔑</span>
+                    <input type="text" id="usuario" required placeholder="Nombre de usuario">
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Contraseña *</label>
+                <div class="input-icon">
+                    <span class="icon">🔒</span>
+                    <input type="password" id="contrasena" required placeholder="••••••••">
+                </div>
+            </div>
+        </div>
+
+        <div class="info-note">
+            <span class="check-icon">✓</span>
+            <p>Al registrarte, aceptas nuestros términos de gestión agrícola.</p>
+        </div>
+
+        <div id="mensaje"></div>
+
+        <div class="form-footer">
+            <button type="submit" class="btn-register">Registrar Cuenta</button>
+            <p class="login-link">¿Ya tienes cuenta? <a href="/login.html">Inicia sesión aquí</a></p>
+        </div>
+    </form>
+</div>
+
+<script src="/js/registro.js"></script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgroInsumos - Catálogo Profesional</title>
+    <link rel="stylesheet" href="/css/estilos.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+
+<header class="navbar">
+    <div class="logo">🍃 <span>AgroInsumos</span></div>
+
+    <nav class="nav-links">
+        <button class="btn-cart">
+            🛒 Carrito <span id="cart-count">0</span>
+        </button>
+
+        <div class="user-menu">
+            <button class="btn-account" id="userBtn">
+                👤 Mi Cuenta
+            </button>
+            <div class="dropdown-content" id="userDropdown">
+            </div>
+        </div>
+    </nav>
+</header>
+
+<main class="container">
+    <section class="catalog-header">
+        <h1>Catálogo de Productos</h1>
+        <p>Encuentra los mejores insumos para potenciar tu cultivo y modernizar tu campo.</p>
+
+        <div class="search-filter-bar">
+            <input type="text" id="buscar" placeholder="🔍 Buscar por nombre de producto..." class="search-input">
+
+            <select class="filter-select" id="categoria">
+                <option value="">Todas las categorías</option>
+                <option value="1">Fertilizantes</option>
+                <option value="2">Herramientas</option>
+                <option value="3">Semillas</option>
+            </select>
+        </div>
+
+        <p id="contadorProductos" class="results-count"></p>
+    </section>
+
+    <section class="product-grid" id="productos">
+    </section>
+</main>
+
+<footer style="text-align: center; padding: 40px; color: #64748b; font-size: 0.9rem;">
+    <p>&copy; 2026 AgroInsumos - Proyecto de Ingeniería de Sistemas</p>
+</footer>
+
+<script src="/js/catalogo.js"></script>
+
+</body>
+</html>

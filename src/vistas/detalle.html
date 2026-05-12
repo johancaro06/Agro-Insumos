@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalle de Producto - Agroinsumos</title>
+    <link rel="stylesheet" href="/css/detalle.css">
+    <!-- SweetAlert2 para notificaciones profesionales -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+
+<main class="product-detail-container">
+    <a href="/index.html" class="back-link">‹ Volver al catálogo</a>
+
+    <div class="main-content">
+        <section class="gallery-section">
+            <div class="main-image">
+                <img id="imgPrincipal" src="/imagenes/default.jpg" alt="Cargando...">
+            </div>
+        </section>
+
+        <section class="info-section">
+            <div class="rating-header">
+                <span class="category-tag" id="txtCategoria">Cargando...</span>
+            </div>
+
+            <h1 id="txtNombre">Cargando producto...</h1>
+            <p class="ref">Ref: Agro-2026</p>
+
+            <div class="price-card">
+                <h2 id="txtPrecio">$0 <span>COP</span></h2>
+                <p>Precio con IVA incluido</p>
+            </div>
+
+            <div class="stock-status">
+                <span class="dot">●</span> <strong id="txtStock">0</strong> disponibles
+            </div>
+
+            <div class="quantity-selector">
+                <label>Cantidad</label>
+                <div class="qty-controls">
+                    <button id="btnMenos">-</button>
+                    <input type="number" id="inputCant" value="1" min="1" readonly>
+                    <button id="btnMas">+</button>
+                </div>
+                <span class="total">Subtotal: <strong id="txtSubtotal">$0</strong></span>
+            </div>
+
+            <div class="action-buttons">
+                <button class="btn-buy">🛒 Comprar ahora</button>
+                <button class="btn-cart-outline">Agregar al carrito</button>
+            </div>
+        </section>
+    </div>
+
+    <section class="description-section">
+        <h2 class="section-title">Descripción Detallada</h2>
+        <p id="txtDescripcion">Cargando descripción...</p>
+    </section>
+</main>
+
+<script src="/js/detalle.js"></script>
+</body>
+</html>
