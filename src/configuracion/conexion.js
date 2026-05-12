@@ -1,19 +1,21 @@
-const mysql = require("mysql2");
+require('dotenv').config();
 
-const db = mysql.createConnection({
-    host: "localhost",
-    user: "root",
-    password: "root1234",
-    database: "agroinsumos",
-    port: 3307
+const mysql = require('mysql2');
+
+const conexion = mysql.createConnection({
+    host: process.env.MYSQLHOST,
+    user: process.env.MYSQLUSER,
+    password: process.env.MYSQLPASSWORD,
+    database: process.env.MYSQLDATABASE,
+    port: process.env.MYSQLPORT
 });
 
-db.connect((err) => {
-    if (err) {
-        console.log(err);
+conexion.connect((error) => {
+    if (error) {
+        console.log("❌ Error de conexión:", error);
     } else {
-        console.log("Conectado a MySQL");
+        console.log("✅ MySQL conectado");
     }
 });
 
-module.exports = db;
+module.exports = conexion;
