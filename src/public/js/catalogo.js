@@ -1,7 +1,6 @@
-const API_PROD = "http://localhost:3000/productos";
+const API_PROD = "/productos";
 let productosGlobal = [];
 
-// 1. Obtener productos del servidor
 async function obtenerProductos() {
     try {
         const respuesta = await fetch(API_PROD);
@@ -20,8 +19,6 @@ async function obtenerProductos() {
         }
     }
 }
-
-// 2. Renderizar las tarjetas de productos
 function mostrarProductos(productos) {
     const contenedor = document.getElementById("productos");
     const contador = document.getElementById("contadorProductos");
@@ -60,7 +57,6 @@ function mostrarProductos(productos) {
     });
 }
 
-// 3. Función global para añadir al carrito
 window.agregarRapido = (id, nombre, precio, imagen) => {
     let carrito = JSON.parse(localStorage.getItem('carrito_agro')) || [];
     const existe = carrito.find(item => item.id === id);
@@ -84,7 +80,6 @@ window.agregarRapido = (id, nombre, precio, imagen) => {
     });
 };
 
-// 4. Sincronizar el contador del Navbar
 function actualizarContador() {
     const carrito = JSON.parse(localStorage.getItem('carrito_agro')) || [];
     const totalItems = carrito.reduce((acc, p) => acc + p.cantidad, 0);
@@ -92,18 +87,15 @@ function actualizarContador() {
     if (badge) badge.innerText = totalItems;
 }
 
-// 5. Manejar Sesión y UI (Nombre del usuario y Roles)
 function actualizarUI() {
     const usuario = JSON.parse(localStorage.getItem('usuario_agro'));
     const btnAccount = document.getElementById("userBtn");
     const dropdown = document.getElementById("userDropdown");
 
     if (usuario && btnAccount) {
-        // Mostrar nombre (Johan o Admin)
         const nombreMostrar = usuario.nombre ? usuario.nombre.split(' ')[0] : 'Usuario';
         btnAccount.innerHTML = `👤 Hola, ${nombreMostrar}`;
 
-        // Construir menú dinámico según rol
         let opcionesExtra = "";
         if (usuario.rol === 'admin') {
             opcionesExtra = `<a href="/admin.html" style="color: #008f4c; font-weight: bold;">⚙️ Panel Admin</a>`;
@@ -129,7 +121,6 @@ function actualizarUI() {
     actualizarContador();
 }
 
-// 6. Buscador dinámico
 const inputBuscar = document.getElementById("buscar");
 if (inputBuscar) {
     inputBuscar.addEventListener("input", (e) => {
@@ -141,7 +132,6 @@ if (inputBuscar) {
     });
 }
 
-// 7. Navegación manual al carrito
 const btnCartNav = document.querySelector(".btn-cart");
 if (btnCartNav) {
     btnCartNav.onclick = () => {
@@ -149,7 +139,6 @@ if (btnCartNav) {
     };
 }
 
-// 8. Control del Dropdown
 const btnUser = document.getElementById("userBtn");
 if (btnUser) {
     btnUser.onclick = (e) => {

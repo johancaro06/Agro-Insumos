@@ -1,4 +1,4 @@
-const API = "http://localhost:3000/productos";
+const API = "/productos";
 
 const tabla = document.getElementById("tablaProductos");
 const form = document.getElementById("formProducto");
